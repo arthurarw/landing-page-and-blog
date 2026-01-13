@@ -1,28 +1,28 @@
-import { PT_Sans_Caption } from 'next/font/google';
-import Image from 'next/image';
+import { PT_Sans_Caption } from "next/font/google";
+import Image from "next/image";
 
 const ptSansCaption = PT_Sans_Caption({
-  subsets: ['latin'],
-  weight: '700',
+  subsets: ["latin"],
+  weight: "700",
 });
 
 const customerStories = [
   {
     content:
-      'Criar minha loja com o site.set foi a melhor decisão para o meu negócio. A plataforma é super intuitiva, e consegui colocar meus produtos à venda em poucos minutos.',
+      "Criar minha loja com o site.set foi a melhor decisão para o meu negócio. A plataforma é super intuitiva, e consegui colocar meus produtos à venda em poucos minutos.",
     author: {
-      name: 'Annete Bones',
-      role: 'CEO na Anne Corp',
-      avatar: '/customer-01.png',
+      name: "Annete Bones",
+      role: "CEO na Anne Corp",
+      avatar: "/customer-01.png",
     },
   },
   {
     content:
-      'Transformar minha ideia em uma loja online foi fácil e rápido. Adorei as opções de personalização e a simplicidade para gerenciar os pedidos. Já vejo meus produtos alcançando mais pessoas!',
+      "Transformar minha ideia em uma loja online foi fácil e rápido. Adorei as opções de personalização e a simplicidade para gerenciar os pedidos. Já vejo meus produtos alcançando mais pessoas!",
     author: {
-      name: 'Jacob Jones',
-      role: 'CEO na JJ Corp',
-      avatar: '/customer-02.png',
+      name: "Jacob Jones",
+      role: "CEO na JJ Corp",
+      avatar: "/customer-02.png",
     },
   },
 ];

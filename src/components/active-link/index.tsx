@@ -7,7 +7,7 @@ type ActiveLinkProps = {
 } & LinkProps;
 
 export const ActiveLink = ({ children, href, ...rest }: ActiveLinkProps) => {
-  const linkPath = typeof href === 'string' ? href : href.pathname;
+  const linkPath = typeof href === "string" ? href : href.pathname;
   const pathname = usePathname();
   const isActive =
     pathname === linkPath || pathname?.startsWith(`${linkPath}/`);
@@ -17,8 +17,8 @@ export const ActiveLink = ({ children, href, ...rest }: ActiveLinkProps) => {
       {...rest}
       href={href}
       className={cn(
-        'text-action-sm transition-colors hover:text-blue-200',
-        isActive ? 'text-blue-200' : 'text-gray-100'
+        "text-action-sm transition-colors hover:text-blue-200",
+        isActive ? "text-blue-200" : "text-gray-100",
       )}
     >
       {children}
