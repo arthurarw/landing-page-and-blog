@@ -1,7 +1,6 @@
-import { allPosts, Post } from "contentlayer/generated";
+import { Post } from "contentlayer/generated";
 import Image from "next/image";
 import Link from "next/link";
-import { useRouter } from "next/router";
 
 import { Avatar } from "@/components/avatar";
 import { Markdown } from "@/components/markdown";
@@ -19,14 +18,9 @@ export type PostPageProps = {
   post: Post;
 };
 
-export const PostPage = () => {
-  const router = useRouter();
-  const slug = router.query.slug as string;
-  const post = allPosts.find(
-    (post) => post?.slug?.toLowerCase() === slug?.toLowerCase(),
-  )!;
+export const PostPage = ({ post }: PostPageProps) => {
   const publishedDate = new Date(post?.date).toLocaleDateString("pt-BR");
-  const postUrl = `https://site.set/blog/${slug}`;
+  const postUrl = `https://site.set/blog/${post.slug}`;
 
   const { shareButtons } = useShare({
     url: postUrl,
@@ -85,7 +79,7 @@ export const PostPage = () => {
               </Avatar.Container>
             </header>
 
-            <div className="prose prose-invert max-w-none px-4 mt-12 md:px-6 lg:px-12">
+            <div className="prose prose-invert max-w-none px-4 mt-4 md:px-6 lg:px-12">
               <Markdown content={post?.body.raw} />
             </div>
           </article>
